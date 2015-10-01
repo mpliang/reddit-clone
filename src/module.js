@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('reddit', ['ui.router', 'firebase'])
+angular.module('reddit', ['ui.router', 'firebase', 'angularMoment'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

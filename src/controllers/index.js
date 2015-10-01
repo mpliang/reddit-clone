@@ -8,7 +8,7 @@ angular.module('reddit')
     title: 'Hello world',
     author: 'Cade',
     subreddit: 'general',
-    createdAt: Date.now(),
+    createdAt: new Date(),
     score: 1,
     content: 'https://myavantiservices.files.wordpress.com/2015/02/helloworld.gif',
     comments: []
