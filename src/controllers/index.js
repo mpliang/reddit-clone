@@ -2,7 +2,7 @@
 
 angular.module('reddit')
 .controller('IndexCtrl', function($scope) { 
-  console.log('indexCtrl');
+
 
   var post = {
     title: 'Hello world',

@@ -9,7 +9,11 @@ angular.module('reddit')
       if(user.password1 !== user.password2){
         $scope.user = {};
         $scope.user.email = user.email;
-        $window.swal("Passwords do not match.")
+        $window.swal({
+          title: "Oh no!",
+          text: "Passwords do not match.",
+          type: 'error'
+        });
       } else {
         Auth.createUser(user)
         .then(function(userData){
@@ -25,8 +29,13 @@ angular.module('reddit')
         });
       }
     } else {
-      
-      // login stuff
+      Auth.login(user)
+      .then(function(userData){
+        $state.go('index');
+      })
+      .catch(function(err) {
+        console.error(err);
+      });
     }
   };
 });

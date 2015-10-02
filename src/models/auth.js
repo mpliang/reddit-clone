@@ -5,11 +5,27 @@ angular.module('reddit')
   var fbUrl = constants.firebaseUrl;
   var ref = new $window.Firebase(fbUrl);
   var auth = $firebaseAuth(ref);
+  this.auth = auth;
+
+  auth.$onAuth(authData => {
+    this.user = authData;
+  });
 
   this.createUser = function(user) {
     return auth.$createUser({
       email: user.email,
       password: user.password1
     });
+  };
+
+  this.login = function(user, cb) {
+    return auth.$authWithPassword({
+      email: user.email,
+      password: user.password1
+    });
+  };
+
+  this.logout = function() {
+    auth.$unauth();
   };
 });
