@@ -1,0 +1,18 @@
+<div class="container col-md-6">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" id="title" placeholder="Title" ng-model='post.title'>
+  </div>
+  <div class="form-group">
+    <label for="subreddit">Subreddit:</label>
+    <input type="text" class="form-control" id="subreddit" placeholder="General" ng-model='post.subreddit'>
+  </div>
+  <div class="form-group">
+    <label for="link">Link:</label>
+    <input type="text" class="form-control" id="link" placeholder="http://www.google.com" ng-model='post.content'>
+  </div>
+  <div class="form-group">
+    <textarea name="body" class="form-control" rows="8" cols="40" ng-model="post.body" placeholder="What's on your mind?"></textarea>
+  </div>
+  <button type="button" class="btn btn-success btn-block" ng-click='newPost(post)'>Post</button>
+</div>

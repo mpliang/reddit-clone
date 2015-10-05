@@ -1,24 +1,4 @@
 <h1>{{state}}</h1>
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model='user.email'>
-  </div>
-  <div class="form-group">
-    <label for="password1">Password</label>
-    <input type="password" class="form-control" id="password1" placeholder="Password" ng-model='user.password1'>
-  </div>
-  <div class="form-group" ng-show="state === 'REGISTER'">
-    <label for="password2">Verify Password</label>
-    <input type="password" class="form-control" id="password2" placeholder="Password" ng-model='user.password2'>
-  </div>
-  <button type="button" class="btn btn-default" ng-click='submit(user)'>{{state}}</button>
-  <span ng-hide="state === 'REGISTER'">
-    &nbsp;&nbsp;<span>No account?</span>&nbsp;&nbsp;<a ui-sref="users.register">Register now!</a>
-
-  </span>
-  <span ng-show="state === 'REGISTER'">
-    &nbsp;&nbsp;<span>Already have an account?</span>&nbsp;&nbsp;<a ui-sref="users.login">Login now!</a>
-  </span>
-</form>
+<!-- <div mikes-login state="state"></div> -->
+<mikes-login state="state"></mikes-login>

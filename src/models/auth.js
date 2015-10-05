@@ -9,6 +9,12 @@ angular.module('reddit')
 
   auth.$onAuth(authData => {
     this.user = authData;
+    if (authData) {
+      // console.log("Authenticated with uid:", authData.uid);
+      console.log("Client authenticated.");
+    } else {
+      console.log("Client unauthenticated.")
+    }
   });
 
   this.createUser = function(user) {
@@ -28,4 +34,5 @@ angular.module('reddit')
   this.logout = function() {
     auth.$unauth();
   };
+
 });
